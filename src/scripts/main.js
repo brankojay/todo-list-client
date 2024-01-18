@@ -5,7 +5,7 @@ function startApplication() {
 
   const existingToDoList = [
     {
-      title: 'Todo Titel 1',
+      title: 'Todo Titel 1 Update',
       dueDate: '2023-12-01',
       note: 'Lorem ipsum....',
     },
