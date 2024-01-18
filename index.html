@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+          <div class="card-body p-4">
+            <h1>ToDo App</h1>
+            <form class="mt-5">
+              <div class="mb-3">
+                <label for="todo-title" class="form-label">ToDo Titel</label>
+                <input type="text" class="form-control" id="todo-title" required>
+              </div>
+              <div class="mb-3">
+                <label for="todo-due-date" class="form-label">Fälligkeitsdatum</label>
+                <input type="date" class="form-control" id="todo-due-date">
+              </div>
+              <div class="mb-3">
+                <label for="todo-note" class="form-label">Notiz</label>
+                <textarea class="form-control" id="todo-note" rows="5"></textarea>
+              </div>
+              <button id="create-todo-button" type="button" class="btn btn-primary mt-3">ToDo erstellen</button>
+            </form>
+
+            <hr class="my-5">
+
+            <div class="accordion" id="todo-list-container">
+            </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
