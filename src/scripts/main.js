@@ -1,25 +1,16 @@
 import '../styles/style.scss'
 import { Collapse } from 'bootstrap'
 
-function startApplication() {
+async function startApplication() {
 
-  const existingToDoList = [
-    {
-      title: 'Todo Titel 1 Update',
-      dueDate: '2023-12-01',
-      note: 'Lorem ipsum....',
-    },
-    {
-      title: 'Todo Titel 2',
-      dueDate: '2023-12-01',
-      note: 'Lorem ipsum....sdfsdfsdf',
-    },
-    {
-      title: 'Todo Titel 3',
-      dueDate: '2023-12-01',
-      note: 'Lorem ipsum....2313123123',
-    },
-  ];
+  async function getTodosFromServer() {
+    const todosResponse = await fetch( "http://localhost:8080/todo" );
+    const todoItems = await todosResponse.json();
+  
+    return todoItems;
+  }
+
+  const existingToDoList = await getTodosFromServer();
 
   function createToDoList() {
     const todoListContainer = document.querySelector( '#todo-list-container' );
