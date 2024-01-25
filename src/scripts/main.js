@@ -4,10 +4,15 @@ import { Collapse } from 'bootstrap'
 async function startApplication() {
 
   async function getTodosFromServer() {
-    const todosResponse = await fetch( "http://localhost:8080/todo" );
-    const todoItems = await todosResponse.json();
-  
-    return todoItems;
+      try {
+        const todosResponse = await fetch( "http://localhost:8080/todo" );
+        const todoItems = await todosResponse.json();
+
+        return todoItems;
+      } catch ( error ) {
+            console.error( error )
+            return []
+      }
   }
 
   const existingToDoList = await getTodosFromServer();
